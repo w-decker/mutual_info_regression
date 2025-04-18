@@ -1,6 +1,5 @@
 import numpy as np
-from sklearn.feature_selection import mutual_info_regression
-
+from sklearn.feature_selection import mutual_info_regression as sklearn_mi
 
 def _subsample(
             X, 
@@ -26,7 +25,7 @@ def _subsample(
         for j in np.arange(0, split):
             _X = X[a[_l[j]:_l[j + 1]], :]
             _y = y[a[_l[j]:_l[j + 1]]]
-            MI_vals = mutual_info_regression(_X, 
+            MI_vals = sklearn_mi(_X, 
                                              _y, 
                                              discrete_features=False, 
                                              n_neighbors=k, 
