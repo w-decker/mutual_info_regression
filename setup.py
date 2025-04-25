@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="mutual_info_regression",
-    version="0.0.1",
+    version="0.0.2",
     author="Will Decker",
     author_email="will.decker@gatech.edu",
     description="Estimate mutual information for a continuous target variable using Holmes and Nemenman (2019) estimator",
