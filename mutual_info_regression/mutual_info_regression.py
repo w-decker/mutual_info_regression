@@ -84,6 +84,7 @@ def mutual_info_regression(
     
     means = {}
     error = {}
+    all_splits = {}
 
     for ks in k:
         mi = _subsample(X, y, ks, splits, **kwargs)
@@ -91,8 +92,10 @@ def mutual_info_regression(
 
         means[ks] = float(np.mean(mi_all))
         error[ks] = float(_std(mi))
+        all_splits[ks] = mi_all
 
     return {
         'means': means, 
         'error': error,
+        'all_splits': all_splits
     }
